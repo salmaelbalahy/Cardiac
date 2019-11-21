@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">cardiac</string>
+    <string name="dep">From 0 to 3 months</string>
+    <string name="abc">From 3 to 6 months</string>
+    <string name="ab">From 6 to 9 months</string>
+    <string name="a">From 9 to 12 months</string>
+    <string name="sa">From 12 to 18 months</string>
+    <string name="saa">From 12 to 18 months</string>
+    <string name="asa">From 18 to 24 months</string>
+    <string name="all">From 2 to 3 years</string>
+    <string name="ala">From 3 to 4 years</string>
+    <string name="ra">From 4 to 6 years</string>
+    <string name="raa">From 6 to 8 years</string>
+    <string name="raw">Next</string>
+    <string name="rwa">Age</string>
+    <string name="ha">More than 65 </string>
+    <string name="has">From 56 to 65 years</string>
+    <string name="fa">From 46 to 55 years</string>
+    <string name="fat">From 36 to 45 years </string>
+    <string name="tam">From 26 to 35 years </string>
+    <string name="tta">From 18 to 25 years</string>
+    <string name="tat">From 15 to 18 years</string>
+    <string name="tla">From 12 to 15 years </string>
+    <string name="ggg">From 8 to 12 years </string>
+    <string name="hhh">Next</string>
+    <string name="jk">Age</string>
+    <string name="vv">Running</string>
+    <string name="ddd">Relaxing</string>
+    <string name="sfg">Anexeity</string>
+    <string name="cvf">Breathing hardly</string>
+    <string name="sdf">Doing nothing</string>
+    <string name="dsg">Next</string>
+    <string name="kkk">What are you doing now ?</string>
+</resources>
+
