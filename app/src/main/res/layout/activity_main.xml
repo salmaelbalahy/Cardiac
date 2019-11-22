@@ -6,194 +6,193 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rB9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ha"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/has"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/fa"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fat"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rB13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tam"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tta"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/tat"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rB16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tla"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ggg"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/raa"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ra"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ala"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/asa"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/saa"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ab"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/abc"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dep"
+                android:textColor="@android:color/black"
+                android:textColorHighlight="@android:color/background_light"
+                android:textSize="24sp" />
+        </RadioGroup>
+    </ScrollView>
+
     <TextView
         android:id="@+id/ageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/rwa"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
-        />
-    <RadioGroup
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ageTV"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp" >
-
-        <RadioButton
-            android:id="@+id/rB9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ha"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
-
-        <RadioButton
-            android:id="@+id/rB10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/has"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-             />
-
-        <RadioButton
-            android:id="@+id/rB11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:text="@string/fa"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
-
-        <RadioButton
-            android:id="@+id/rB12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fat"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <RadioButton
-            android:id="@+id/rB13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tam"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-           />
-
-        <RadioButton
-            android:id="@+id/rB14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tta"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
-
-        <RadioButton
-            android:id="@+id/rB15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:text="@string/tat"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/rB16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tla"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
-
-        <RadioButton
-            android:id="@+id/rb2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ggg"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
-
-        <RadioButton
-            android:id="@+id/radioButton7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/raa"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ra"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ala"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/all"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/asa"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButt3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/saa"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButt2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/a"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ab"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/abc"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dep"
-            android:textColor="@android:color/black"
-            android:textColorHighlight="@android:color/background_light"
-            android:textSize="24sp" />
-    </RadioGroup>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -218,26 +217,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/group"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content" />-->
 
-<!--    <androidx.constraintlayout.widget.Group-->
-<!--        android:id="@+id/group"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/group2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content" />-->
 
-<!--    <androidx.constraintlayout.widget.Group-->
-<!--        android:id="@+id/group2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
+    <!--    <androidx.constraintlayout.widget.Group-->
+    <!--        android:id="@+id/group3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content" />-->
 
-<!--    <androidx.constraintlayout.widget.Group-->
-<!--        android:id="@+id/group3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/guideline"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.9756691" />-->
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintGuide_percent="0.9756691" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
