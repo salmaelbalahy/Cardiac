@@ -14,16 +14,16 @@
     <string name="raw">Next</string>
     <string name="rwa">Age</string>
     <string name="ha">More than 65 </string>
-    <string name="has">From 56 to 65 years</string>
-    <string name="fa">From 46 to 55 years</string>
-    <string name="fat">From 36 to 45 years </string>
-    <string name="tam">From 26 to 35 years </string>
-    <string name="tta">From 18 to 25 years</string>
-    <string name="tat">From 15 to 18 years</string>
-    <string name="tla">From 12 to 15 years </string>
-    <string name="ggg">From 8 to 12 years </string>
+    <string name="has">Others</string>
+    <string name="fa">heart diseases</string>
+    <string name="fat">Anemia </string>
+    <string name="tam">Cardiomyopathy</string>
+    <string name="tta">Hyper thyroidism</string>
+    <string name="tat">Valvular heart disease</string>
+    <string name="tla">Coronary artery disease </string>
+    <string name="ggg">Diabetes</string>
     <string name="hhh">Next</string>
-    <string name="jk">Age</string>
+    <string name="jk">Which disease you have?</string>
     <string name="vv">Running</string>
     <string name="ddd">Relaxing</string>
     <string name="sfg">Anexeity</string>
@@ -34,6 +34,14 @@
     <string name="kjf">Are You Smoker ?</string>
     <string name="sd">Yes</string>
     <string name="df">No</string>
+    <string name="jhe">From 56 to 65 years</string>
+    <string name="fjd">From 46 to 55 years</string>
+    <string name="gjk">From 36 to 45 years </string>
+    <string name="sdg">From 26 to 35 years </string>
+    <string name="asd">From 18 to 25 years </string>
+    <string name="dfg">From 15 to 18 years </string>
+    <string name="hjk">From 12 to 15 years </string>
+    <string name="odl">From 8 to 12 years </string>
 </resources>
 
 

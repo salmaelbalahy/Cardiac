@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="55dp"
@@ -29,27 +30,27 @@
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB10"
+                android:id="@+id/gdf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/has"
+                android:text="@string/jhe"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB11"
+                android:id="@+id/rB11nn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="@string/fa"
+                android:text="@string/fjd"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB12"
+                android:id="@+id/rB12cxv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fat"
+                android:text="@string/gjk"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -58,43 +59,43 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RadioButton
-                android:id="@+id/rB13"
+                android:id="@+id/fge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tam"
+                android:text="@string/sdg"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB14"
+                android:id="@+id/wrf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tta"
+                android:text="@string/asd"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB15"
+                android:id="@+id/rB1577"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="@string/tat"
+                android:text="@string/dfg"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rB16"
+                android:id="@+id/rB16fg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tla"
+                android:text="@string/hjk"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
             <RadioButton
-                android:id="@+id/rb2"
+                android:id="@+id/rb2cf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ggg"
+                android:text="@string/odl"
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
@@ -199,7 +200,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="270dp"
         android:layout_marginLeft="270dp"
-        android:layout_marginTop="645dp"
+        android:layout_marginTop="550dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="30dp"

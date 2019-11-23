@@ -127,7 +127,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
                 android:text="@string/sd"
-                android:textSize="24" />
+                android:textSize="24sp" />
 
             <RadioButton
                 android:id="@+id/radioButton8"
