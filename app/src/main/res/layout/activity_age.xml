@@ -6,162 +6,142 @@
     android:layout_height="match_parent"
     tools:context=".age">
 
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="405dp"
-        android:layout_height="700dp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="607dp"
+            android:text="@string/ggg"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rb"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="65dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="607dp"
-                android:text="@string/ggg"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB8"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-600dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="540dp"
+            android:text="@string/tla"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB8"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-600dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="540dp"
-                android:text="@string/tla"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB7"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-530dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="476dp"
+            android:text="@string/tat"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB7"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-530dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="476dp"
-                android:text="@string/tat"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB6"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-460dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="414dp"
+            android:text="@string/tta"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB6"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-460dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="414dp"
-                android:text="@string/tta"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB5"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-400dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="352dp"
+            android:text="@string/tam"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB5"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-400dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="352dp"
-                android:text="@string/tam"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB4"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-340dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="280dp"
+            android:text="@string/fat"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB4"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-340dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="280dp"
-                android:text="@string/fat"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <RadioButton
+            android:id="@+id/rB3"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-267dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="207dp"
+            android:text="@string/fa"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
-            <RadioButton
-                android:id="@+id/rB3"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="-267dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="207dp"
-                android:text="@string/fa"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="119dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="276dp"
+            android:layout_marginLeft="276dp"
+            android:layout_marginTop="-200dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:shadowColor="@color/colorAccent"
+            android:text="@string/hhh"
+            android:textColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="22sp" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="119dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="276dp"
-                android:layout_marginLeft="276dp"
-                android:layout_marginTop="-100dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:shadowColor="@color/colorAccent"
-                android:text="@string/hhh"
-                android:textColor="@color/colorAccent"
-                android:textColorHighlight="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="22sp" />
-        </RadioGroup>
-    </ScrollView>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="-560dp"
+            android:layout_marginBottom="657dp"
+            android:text="@string/jk"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="400dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="179dp"
-        android:layout_marginRight="179dp"
-        android:layout_marginBottom="657dp"
-        android:text="@string/jk"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="385dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

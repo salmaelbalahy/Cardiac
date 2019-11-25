@@ -87,6 +87,25 @@
             app:layout_constraintTop_toBottomOf="parent" />
 
         <RadioButton
+            android:id="@+id/radjh"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/ole"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <RadioButton
             android:id="@+id/rad5"
             android:layout_width="350dp"
             android:layout_height="50dp"
