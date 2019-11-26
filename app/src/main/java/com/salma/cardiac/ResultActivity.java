@@ -3,6 +3,7 @@ package com.salma.cardiac;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -17,6 +18,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 
@@ -27,7 +30,10 @@ public class ResultActivity extends AppCompatActivity {
     private final static int REQUEST_ENABLE_BT = 55;
     private final static int LOCATION_PERMISSION_REQUEST_CODE = 65;
 
-    TextView textView;
+    List<String> connectedDevicesList = new ArrayList<>();
+
+    RecyclerView connectedDevicesRV;
+    DevicesAdapter adapter;
 
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -36,7 +42,10 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        textView = findViewById(R.id.textView);
+        adapter = new DevicesAdapter();
+        connectedDevicesRV = findViewById(R.id.connectedDevicesRV);
+        connectedDevicesRV.setHasFixedSize(true);
+        connectedDevicesRV.setAdapter(adapter);
         getLocationPermissions();
         // Register for broadcasts when a device is discovered.
         IntentFilter filter = new IntentFilter();
@@ -105,7 +114,9 @@ public class ResultActivity extends AppCompatActivity {
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
                 Log.e(TAG, "BroadcastReceiver: "+deviceName + "&&" + deviceHardwareAddress);
-                textView.setText(deviceName + deviceHardwareAddress);
+                connectedDevicesList.add(deviceName);
+                adapter.setConnectedDeviceList(connectedDevicesList);
+
             }
         }
     };
