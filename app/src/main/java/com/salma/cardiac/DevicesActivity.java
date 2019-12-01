@@ -257,9 +257,9 @@ public class DevicesActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener onPairedListItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//            if(scanning){
-//                bluetooth.stopScanning();
-//            }
+            if(scanning){
+                bluetooth.stopScanning();
+            }
             bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
 
         }
@@ -281,9 +281,9 @@ public class DevicesActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener onScanListItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//            if(scanning){
-//                bluetooth.stopScanning();
-//            }
+            if(scanning){
+                bluetooth.stopScanning();
+            }
             setProgressAndState("Pairing...", View.VISIBLE);
             bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
         }
