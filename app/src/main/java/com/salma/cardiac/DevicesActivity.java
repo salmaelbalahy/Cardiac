@@ -113,6 +113,7 @@ public class DevicesActivity extends AppCompatActivity {
                     case BluetoothGatt.STATE_DISCONNECTED:
                         Log.d("Info", "Device disconnected");
                         scanButton.setText("Get Heart Rate");
+                        Toast.makeText(DevicesActivity.this,"Connected",Toast.LENGTH_LONG).show();
 
                         break;
                     case BluetoothGatt.STATE_CONNECTED: {
