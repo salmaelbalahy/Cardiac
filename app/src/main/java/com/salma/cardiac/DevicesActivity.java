@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattDescriptor;
+import android.bluetooth.BluetoothGattService;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +41,7 @@ public class DevicesActivity extends AppCompatActivity {
     private ArrayAdapter<String> pairedListAdapter;
     private boolean scanning = false;
     private BluetoothGatt bluetoothGatt;
+    private SharedPreferences sharedPreferences;
     private BluetoothGattCallback miBandGattCallBack;
 
 
@@ -84,8 +90,105 @@ public class DevicesActivity extends AppCompatActivity {
                 bluetooth.startScanning();
             }
         });
+
+        sharedPreferences = getSharedPreferences("MiBandConnectPreferences", Context.MODE_PRIVATE);
+        miBandGattCallBack = new BluetoothGattCallback() {
+            @Override
+            public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
+                switch (newState) {
+                    case BluetoothGatt.STATE_DISCONNECTED:
+                        Log.d("Info", "Device disconnected");
+
+                        break;
+                    case BluetoothGatt.STATE_CONNECTED: {
+                        Log.d("Info", "Connected with device");
+                        Log.d("Info", "Discovering services");
+                        gatt.discoverServices();
+                    }
+                    break;
+                }
+            }
+
+            @Override
+            public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+
+                if (!sharedPreferences.getBoolean("isAuthenticated", false)) {
+                    authoriseMiBand();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("isAuthenticated", true);
+                    editor.apply();
+                } else
+                    Log.d("Info", "Already authenticated");
+            }
+
+            @Override
+            public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+
+                switch (characteristic.getService().getUuid().toString()) {
+                    case UUIDs.DEVICE_INFORMATION_SERVICE_STRING:
+//                        handleDeviceInfo(characteristic);
+                        break;
+                    case UUIDs.GENERIC_ACCESS_SERVICE_STRING:
+//                        handleGenericAccess(characteristic);
+                        break;
+                    case UUIDs.GENERIC_ATTRIBUTE_SERVICE_STRING:
+//                        handleGenericAttribute(characteristic);
+                        break;
+                    case UUIDs.ALERT_NOTIFICATION_SERVICE_STRING:
+//                        handleAlertNotification(characteristic);
+                        break;
+                    case UUIDs.IMMEDIATE_ALERT_SERVICE_STRING:
+//                        handleImmediateAlert(characteristic);
+                        break;
+                }
+            }
+
+            @Override
+            public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+                super.onCharacteristicWrite(gatt, characteristic, status);
+            }
+
+            @Override
+            public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+
+                switch (characteristic.getUuid().toString()) {
+                    case UUIDs.CUSTOM_SERVICE_AUTH_CHARACTERISTIC_STRING:
+//                        executeAuthorisationSequence(characteristic);
+                        break;
+                    case UUIDs.HEART_RATE_MEASUREMENT_CHARACTERISTIC_STRING:
+//                        handleHeartRateData(characteristic);
+                        break;
+                }
+            }
+
+            @Override
+            public void onDescriptorRead(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+                Log.d("Info", descriptor.getUuid().toString() + " Read");
+            }
+
+            @Override
+            public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+                Log.d("Info", descriptor.getUuid().toString() + " Written");
+            }
+        };
+
     }
 
+    private void authoriseMiBand() {
+        BluetoothGattService service = bluetoothGatt.getService(UUIDs.CUSTOM_SERVICE_FEE1);
+
+        BluetoothGattCharacteristic characteristic = service.getCharacteristic(UUIDs.CUSTOM_SERVICE_AUTH_CHARACTERISTIC);
+        bluetoothGatt.setCharacteristicNotification(characteristic, true);
+        for (BluetoothGattDescriptor descriptor : characteristic.getDescriptors()) {
+            if (descriptor.getUuid().equals(UUIDs.CUSTOM_SERVICE_AUTH_DESCRIPTOR)) {
+                Log.d("INFO", "Found NOTIFICATION BluetoothGattDescriptor: " + descriptor.getUuid().toString());
+                descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            }
+        }
+
+        characteristic.setValue(new byte[]{0x01, 0x8, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x40, 0x41, 0x42, 0x43, 0x44, 0x45});
+        bluetoothGatt.writeCharacteristic(characteristic);
+    }
     private AdapterView.OnItemClickListener onPairedListItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -116,29 +219,20 @@ public class DevicesActivity extends AppCompatActivity {
                 bluetooth.stopScanning();
             }
             setProgressAndState("Pairing...", View.VISIBLE);
-            try {
-                if (createBond(scannedDevices.get(i))){
-                    Toast.makeText(DevicesActivity.this,"Paired",Toast.LENGTH_LONG).show();
-                }
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                Log.e(TAG, "onItemClick: "+e.getLocalizedMessage() );
-            }
-
+            bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
         }
     };
 
-    public boolean createBond(BluetoothDevice btDevice)
-            throws Exception
-    {
-        Class class1 = Class.forName("android.bluetooth.BluetoothDevice");
-        Method createBondMethod = class1.getMethod("createBond");
-        Boolean returnValue = (Boolean) createBondMethod.invoke(btDevice);
-        return returnValue.booleanValue();
-    }
-//
+//    public boolean createBond(BluetoothDevice btDevice)
+//            throws Exception
+//    {
+//        Class class1 = Class.forName("android.bluetooth.BluetoothDevice");
+//        Method createBondMethod = class1.getMethod("createBond");
+//        Boolean returnValue = (Boolean) createBondMethod.invoke(btDevice);
+//        return returnValue.booleanValue();
+//    }
+////
+
 
     @Override
     protected void onStart() {
