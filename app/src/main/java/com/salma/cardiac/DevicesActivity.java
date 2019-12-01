@@ -156,7 +156,7 @@ public class DevicesActivity extends AppCompatActivity {
 //                        executeAuthorisationSequence(characteristic);
                         break;
                     case UUIDs.HEART_RATE_MEASUREMENT_CHARACTERISTIC_STRING:
-//                        handleHeartRateData(characteristic);
+                        handleHeartRateData(characteristic);
                         break;
                 }
             }
@@ -174,6 +174,12 @@ public class DevicesActivity extends AppCompatActivity {
 
     }
 
+    private void handleHeartRateData(final BluetoothGattCharacteristic characteristic) {
+
+        Log.d("Info",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0).toString());
+
+
+    }
     private void authoriseMiBand() {
         BluetoothGattService service = bluetoothGatt.getService(UUIDs.CUSTOM_SERVICE_FEE1);
 
