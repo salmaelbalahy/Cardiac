@@ -24,7 +24,10 @@ import android.widget.Toast;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import me.aflak.bluetooth.Bluetooth;
 import me.aflak.bluetooth.interfaces.BluetoothCallback;
@@ -40,9 +43,13 @@ public class DevicesActivity extends AppCompatActivity {
     private List<BluetoothDevice> pairedDevices;
     private ArrayAdapter<String> pairedListAdapter;
     private boolean scanning = false;
+    private final Object object = new Object();
+    private Map<UUID, String> deviceInfoMap;
     private BluetoothGatt bluetoothGatt;
     private SharedPreferences sharedPreferences;
     private BluetoothGattCallback miBandGattCallBack;
+    private BluetoothGattService variableService;
+    private boolean isDeviceConnected = false;
 
 
     TextView state;
@@ -55,7 +62,7 @@ public class DevicesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_devices);
-
+        deviceInfoMap = new HashMap<>();
         scanButton = findViewById(R.id.activity_scan_button);
 
         progress = findViewById(R.id.activity_scan_progress);
@@ -87,7 +94,14 @@ public class DevicesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                bluetooth.startScanning();
+                if (isDeviceConnected){
+
+
+                    getDeviceInformation();
+                    getGenericAccessInfo();
+                    //temporary calls
+                    getHeartRate();
+                }else bluetooth.startScanning();
             }
         });
 
@@ -98,6 +112,7 @@ public class DevicesActivity extends AppCompatActivity {
                 switch (newState) {
                     case BluetoothGatt.STATE_DISCONNECTED:
                         Log.d("Info", "Device disconnected");
+                        scanButton.setText("Get Heart Rate");
 
                         break;
                     case BluetoothGatt.STATE_CONNECTED: {
@@ -174,6 +189,49 @@ public class DevicesActivity extends AppCompatActivity {
 
     }
 
+    //getting the device details
+    private void getDeviceInformation() {
+        variableService = bluetoothGatt.getService(UUIDs.DEVICE_INFORMATION_SERVICE);
+
+        try {
+            for (BluetoothGattCharacteristic characteristic : variableService.getCharacteristics()) {
+                bluetoothGatt.setCharacteristicNotification(characteristic, true);
+                bluetoothGatt.readCharacteristic(characteristic);
+                synchronized (object) {
+                    object.wait(2000);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getGenericAccessInfo() {
+        variableService = bluetoothGatt.getService(UUIDs.GENERIC_ACCESS_SERVICE);
+        try {
+            for (BluetoothGattCharacteristic characteristic : variableService.getCharacteristics()) {
+                bluetoothGatt.setCharacteristicNotification(characteristic, true);
+                bluetoothGatt.readCharacteristic(characteristic);
+                synchronized (object) {
+                    object.wait(2000);
+                }
+                deviceInfoMap.put(characteristic.getUuid(), characteristic.getStringValue(0));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void getHeartRate() {
+        variableService = bluetoothGatt.getService(UUIDs.HEART_RATE_SERVICE);
+        BluetoothGattCharacteristic heartRateCharacteristic = variableService.getCharacteristic(UUIDs.HEART_RATE_MEASUREMENT_CHARACTERISTIC);
+        BluetoothGattDescriptor heartRateDescriptor = heartRateCharacteristic.getDescriptor(UUIDs.HEART_RATE_MEASURMENT_DESCRIPTOR);
+
+        bluetoothGatt.setCharacteristicNotification(heartRateCharacteristic, true);
+        heartRateDescriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+        bluetoothGatt.writeDescriptor(heartRateDescriptor);
+    }
     private void handleHeartRateData(final BluetoothGattCharacteristic characteristic) {
 
         Log.d("Info",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0).toString());
@@ -198,9 +256,9 @@ public class DevicesActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener onPairedListItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            if(scanning){
-                bluetooth.stopScanning();
-            }
+//            if(scanning){
+//                bluetooth.stopScanning();
+//            }
             bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
 
         }
@@ -222,23 +280,14 @@ public class DevicesActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener onScanListItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            if(scanning){
-                bluetooth.stopScanning();
-            }
+//            if(scanning){
+//                bluetooth.stopScanning();
+//            }
             setProgressAndState("Pairing...", View.VISIBLE);
             bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
         }
     };
 
-//    public boolean createBond(BluetoothDevice btDevice)
-//            throws Exception
-//    {
-//        Class class1 = Class.forName("android.bluetooth.BluetoothDevice");
-//        Method createBondMethod = class1.getMethod("createBond");
-//        Boolean returnValue = (Boolean) createBondMethod.invoke(btDevice);
-//        return returnValue.booleanValue();
-//    }
-////
 
 
     @Override
