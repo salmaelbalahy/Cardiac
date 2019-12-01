@@ -195,6 +195,7 @@ public class DevicesActivity extends AppCompatActivity {
             if(scanning){
                 bluetooth.stopScanning();
             }
+            bluetoothGatt = scannedDevices.get(i).connectGatt(getApplicationContext(), true, miBandGattCallBack);
 
         }
     };
