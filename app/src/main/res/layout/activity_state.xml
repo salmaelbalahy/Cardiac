@@ -11,10 +11,13 @@
         android:id="@+id/rg1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/bb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
             android:id="@+id/rad"
@@ -26,6 +29,9 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="494dp"
+            android:background="@color/colorPrimaryDark"
+            android:foregroundTint="#FFFFFF"
+            android:includeFontPadding="true"
             android:text="@string/vv"
             android:textColor="@android:color/black"
             android:textSize="24sp"
@@ -41,6 +47,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="1500dp"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/ddd"
             android:textColor="@android:color/black"
             android:textSize="24sp"
@@ -59,7 +66,8 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="0dp"
-            android:text="@string/sfg"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/nf"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +85,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="0dp"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/cvf"
             android:textColor="@android:color/black"
             android:textSize="24sp"
@@ -96,6 +105,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="0dp"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/ole"
             android:textColor="@android:color/black"
             android:textSize="24sp"
@@ -115,6 +125,7 @@
             android:layout_marginEnd="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="160dp"
+            android:background="#000000FF"
             android:text="@string/sdf"
             android:textColor="@android:color/black"
             android:textSize="24sp"
@@ -145,6 +156,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/sd"
                 android:textSize="24sp" />
 
@@ -155,6 +167,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/df"
                 android:textSize="24sp" />
         </RadioGroup>

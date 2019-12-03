@@ -30,6 +30,7 @@
     <string name="cvf">Breathing hardly</string>
     <string name="sdf">Doing nothing</string>
     <string name="dsg">Next</string>
+    <string name="nf">Athlete</string>
     <string name="kkk">What are you doing now ?</string>
     <string name="kjf">Are You Smoker ?</string>
     <string name="sd">Yes</string>
@@ -43,14 +44,17 @@
     <string name="hjk">From 12 to 15 years </string>
     <string name="odl">From 8 to 12 years </string>
     <string name="ole">Anxeity</string>
+    <string name="dj">Gender</string>
+    <string name="ll">No disease</string>
 
-    <string name="agk">•	Let the baby sleep in a suitable environment which provides him with the sense of relaxation.
-•	Feeding the baby well.
-•	For the mother, you should take care of the protein and calcium percentage in your body.
-•	The parents shouldn’t drink drugs OR smoke.
-•	Keep the baby away from smoke or polluted air.
-•	Ask the doctor continuously if all body systems are working well or not.
-</string>
+    <string name="agk">•	Let the baby sleep in a suitable environment which provides him with the sense of relaxation.</string>
+    <string name="fv">•	Feeding the baby well.</string>
+    <string name="dsk">•	For the mother, you should take care of the protein and calcium percentage in your body.</string>
+    <string name="gen">•	The parents shouldn’t drink drugs OR smoke.</string>
+    <string name="gdc">•	Keep the baby away from smoke or polluted air.</string>
+    <string name="dsj">•	Ask the doctor continuously if all body systems are working well or not.</string>
+    <string name="gender">gender</string>
+
 </resources>
 
 

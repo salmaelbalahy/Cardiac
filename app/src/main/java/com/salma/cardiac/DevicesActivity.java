@@ -120,7 +120,7 @@ public class DevicesActivity extends AppCompatActivity {
                         Log.d("Info", "Discovering services");
                         scanButton.setText("Get Heart Rate");
                         Toast.makeText(DevicesActivity.this,"Connected",Toast.LENGTH_LONG).show();
-                        isDeviceConnected = true
+                        isDeviceConnected = true;
                         gatt.discoverServices();
                     }
                     break;

@@ -4,195 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bb"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="263dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="111dp"
+        android:splitMotionEvents="true"
+        android:text="@string/gender"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/rB9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ha"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/gdf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/jhe"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/rB11nn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="@string/fjd"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/rB12cxv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/gjk"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RadioButton
-                android:id="@+id/fge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/sdg"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/wrf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/asd"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/rB1577"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="@string/dfg"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/rB16fg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/hjk"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/rb2cf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/odl"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/raa"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ra"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ala"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/all"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/asa"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButt3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/saa"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButt2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/a"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ab"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/abc"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dep"
-                android:textColor="@android:color/black"
-                android:textColorHighlight="@android:color/background_light"
-                android:textSize="24sp" />
-        </RadioGroup>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/ageTV2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/ageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="104dp"
         android:text="@string/rwa"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ageTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="364dp"
+        android:text="@string/dj"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
     <Button
         android:id="@+id/button"
@@ -215,6 +75,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="241dp"
+        android:ems="10"
+        android:hint="Enter your age"
+        android:inputType="numberSigned"
+        android:scrollbarStyle="outsideOverlay"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <!--    <androidx.constraintlayout.widget.Group-->
