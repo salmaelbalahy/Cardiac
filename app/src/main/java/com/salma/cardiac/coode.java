@@ -12,27 +12,20 @@ public class coode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coode);
-        EditText age =findViewById(R.id.editText);
-        RadioButton Running=findViewById(R.id.rad);
-        RadioButton Relaxing=findViewById(R.id.rad2);
-        RadioButton Athlete=findViewById(R.id.rad3);
-        RadioButton BreathingHardly=findViewById(R.id.rad4);
-        RadioButton Doingnothing=findViewById(R.id.rad5);
-        RadioButton Anexeity=findViewById(R.id.radjh);
-        final String a=age.getText().toString();
-        SharedPreferencesManager.getIntValue(this,"age");
 
+        RadioButton Running = findViewById(R.id.rad);
+        RadioButton Relaxing = findViewById(R.id.rad2);
+        RadioButton Athlete = findViewById(R.id.rad3);
+        RadioButton BreathingHardly = findViewById(R.id.rad4);
+        RadioButton Doingnothing = findViewById(R.id.rad5);
+        RadioButton Anexeity = findViewById(R.id.radjh);
 
-        int ageValue = Integer .valueOf(a);
-        if (ageValue < 0 && ageValue>=3)
+        int age = SharedPreferencesManager.getIntValue(this,"age");
 
-
-            SharedPreferencesManager.getIntValue(this,"age");
-
+        if (age < 0 && age >= 3)
         {
-
-
-
+            // do something
+        }
 
     }
 }
